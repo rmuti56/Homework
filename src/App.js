@@ -13,6 +13,7 @@ const theme = {
     primary: "#C93732",
     bg: "#fff",
     fg: "#F0F0F0",
+    white: '#fff'
   },
 };
 function App() {

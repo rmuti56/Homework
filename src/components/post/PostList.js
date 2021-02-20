@@ -1,8 +1,9 @@
 import { AuthorService, PostService } from "@/services";
 import { useEffect, useState } from "react";
+import { Pagination } from "@/components/common";
 import PostCard from "./PostCard";
 import { StyledPostList } from "./styled-post";
-const PAGE_SIZE = 10;
+const PAGE_SIZE = 8;
 const PostList = () => {
   const [isLoading, setLoading] = useState(true);
   const [isError, setError] = useState(false);
@@ -31,6 +32,11 @@ const PostList = () => {
     }
   };
 
+  const handlePageChange = (nextPage) => {
+    console.log(nextPage)
+    setCurrentPage(nextPage);
+  };
+
   if (isLoading) {
     return <div>loading...</div>;
   }
@@ -50,6 +56,12 @@ const PostList = () => {
         .map((post) => (
           <PostCard key={post.id} post={post} />
         ))}
+      <Pagination
+        totalItem={posts.length}
+        currentPage={currentPage}
+        pageSize={PAGE_SIZE}
+        handlePageChange={handlePageChange}
+      />
     </StyledPostList>
   );
 };

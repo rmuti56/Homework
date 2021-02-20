@@ -43,3 +43,5 @@ export const StyledAuthor = styled.div`
     color: ${(props) => props.theme.color.primary};
   }
 `;
+
+
