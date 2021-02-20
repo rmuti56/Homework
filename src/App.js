@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider } from "styled-components";
+import "./App.css";
+import { Router } from "./router";
+import TimeAgo from "javascript-time-ago";
 
+// English.
+import en from "javascript-time-ago/locale/en";
+
+TimeAgo.addDefaultLocale(en);
+
+const theme = {
+  color: {
+    primary: "#C93732",
+    bg: "#fff",
+    fg: "#F0F0F0",
+  },
+};
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="app">
+        <Router />
+      </div>
+    </ThemeProvider>
   );
 }
 
