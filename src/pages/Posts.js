@@ -2,10 +2,10 @@ import { PostList } from "@/components";
 import { useEffect } from "react";
 
 const PostsPage = () => {
-  useEffect(()=>{
-    document.title = "Posts"
-  })
-  console.log('render')
+  useEffect(() => {
+    document.title = "Posts";
+  });
+
   return (
     <div>
       <h1>MAQE Forums</h1>

@@ -33,6 +33,7 @@ export const StyledAuthorAvatar = styled.img`
   border-radius: 100%;
   width: 90px;
   height: 90px;
+  object-fit: cover;
 `;
 
 export const StyledAuthor = styled.div`

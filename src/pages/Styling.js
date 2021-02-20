@@ -1,5 +1,11 @@
+import { Styling } from "@/components";
+import { useEffect } from "react";
+
 const StylingPage = () => {
-  return <div>Style</div>;
+  useEffect(() => {
+    document.title = "Styling";
+  });
+  return <Styling />;
 };
 
 export default StylingPage;

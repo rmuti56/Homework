@@ -5,6 +5,7 @@ import TimeAgo from "javascript-time-ago";
 
 // English.
 import en from "javascript-time-ago/locale/en";
+import { Layout } from "./components";
 
 TimeAgo.addDefaultLocale(en);
 
@@ -13,15 +14,17 @@ const theme = {
     primary: "#C93732",
     bg: "#fff",
     fg: "#F0F0F0",
-    white: '#fff'
+    white: "#fff",
   },
 };
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div className="app">
-        <Router />
-      </div>
+      <Layout>
+        <div className="app">
+          <Router />
+        </div>
+      </Layout>
     </ThemeProvider>
   );
 }

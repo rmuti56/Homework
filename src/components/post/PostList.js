@@ -22,7 +22,6 @@ const PostList = () => {
         );
         return { ...post, author };
       });
-      console.log(postsMapAuthors);
       setPosts(postsMapAuthors);
     } catch (error) {
       console.error(error);
@@ -33,7 +32,6 @@ const PostList = () => {
   };
 
   const handlePageChange = (nextPage) => {
-    console.log(nextPage)
     setCurrentPage(nextPage);
   };
 
@@ -42,7 +40,7 @@ const PostList = () => {
   }
 
   if (isError) {
-    return <div>Something Wrong</div>;
+    return <div className="text-center error">Something Wrong</div>;
   }
 
   const getStartRender = () => {
