@@ -1,6 +1,6 @@
 import { AuthorService, PostService } from "@/services";
 import { useEffect, useState } from "react";
-import { Pagination } from "@/components/common";
+import { Loading, Pagination } from "@/components/common";
 import PostCard from "./PostCard";
 import { StyledPostList } from "./styled-post";
 const PAGE_SIZE = 8;
@@ -36,7 +36,11 @@ const PostList = () => {
   };
 
   if (isLoading) {
-    return <div>loading...</div>;
+    return (
+      <div className="text-center">
+        <Loading />
+      </div>
+    );
   }
 
   if (isError) {
